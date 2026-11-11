@@ -1,0 +1,16 @@
+<div class="bg-white rounded-lg shadow p-8 max-w-3xl">
+  <h1 class="text-3xl font-bold mb-2"><%= @flat.name %></h1>
+  <p class="text-gray-500 mb-6"><i class="fa-solid fa-location-dot"></i> <%= @flat.address %></p>
+  <p class="text-gray-700 mb-6"><%= @flat.description %></p>
+
+  <div class="flex gap-6 text-gray-700 mb-8">
+    <p><i class="fa-solid fa-sterling-sign"></i> £<%= @flat.price_per_night %> / night</p>
+    <p><i class="fa-solid fa-user-group"></i> <%= @flat.number_of_guests %> guests</p>
+  </div>
+
+  <div class="flex gap-4">
+    <%= link_to "Edit", edit_flat_path(@flat), class: "bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700" %>
+    <%= link_to "Delete", flat_path(@flat), data: { turbo_method: :delete, turbo_confirm: "Delete this flat?" }, class: "bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700" %>
+    <%= link_to "Back to flats", flats_path, class: "px-4 py-2 text-blue-600 hover:underline" %>
+  </div>
+</div>
